@@ -90,7 +90,7 @@ export default function gjsPromotionBlocks(
         tagName: "button",
         components: [""],
         traits: [
-          { id: "text", name: "id", label: "id", changeProp: true },
+          "id",
           {
             type: "number",
             name: "designTop",

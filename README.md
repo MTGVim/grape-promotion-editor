@@ -2,10 +2,10 @@
 https://simple-webpage-builder.web.app/
 
 <kbd>
-<img width="440" alt="image" src="https://github.com/user-attachments/assets/eabc67cf-35b0-4671-90c2-e421cc8a430f" />
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/eabc67cf-35b0-4671-90c2-e421cc8a430f" />
 </kbd>
 <kbd>
-<img width="440" alt="image" src="https://github.com/user-attachments/assets/a9aa6527-e349-4462-8feb-5341fa9451bc" />
+<img width="480" alt="image" src="https://github.com/user-attachments/assets/a9aa6527-e349-4462-8feb-5341fa9451bc" />
 </kbd>
 
 

@@ -1,4 +1,4 @@
-import { Editor } from "grapesjs";
+import { Editor } from 'grapesjs';
 
 interface IButtonScriptProps {
   id: string;
@@ -10,43 +10,47 @@ interface IButtonScriptProps {
   linkready: "true" | "false";
 }
 
-function buttonScript(
-  this: HTMLElement,
-  {
-    linkUrl,
-    designHeight,
-    designWidth,
-    designTop,
-    designLeft,
-    linkready,
-  }: IButtonScriptProps
-) {
-  // `this` is bound to the component element
-  const hsp = (e: number) =>
-    `calc(${
-      window.visualViewport?.width
-        ? `${window.visualViewport?.width}px`
-        : "" || "100vw"
-    } / 375 * ${e})`;
-  console.log(this.id);
-  const el = this;
-  const updateStyle = () => {
-    el.style.top = hsp(designTop);
-    el.style.left = hsp(designLeft);
-    el.style.height = hsp(designHeight);
-    el.style.width = hsp(designWidth);
-    el.style.background = !linkready ? "rgba(255,0,255,0.5)" : "transparent";
-  };
-  el.onclick = !linkready ? () => undefined : () => window.open(linkUrl);
-  el.ownerDocument.body.onresize = () => updateStyle();
-  updateStyle();
-}
-
 type BlockType = "image" | "button" | "template";
 export default function gjsPromotionBlocks(
   editor: Editor,
   options?: { blocks?: BlockType[] }
 ) {
+  const resizeHandlerCleanups = new Map<string, () => void>();
+
+  function buttonScript(  this: HTMLElement,  props : IButtonScriptProps  ) {
+    const {
+      linkUrl,
+      designHeight,
+      designWidth,
+      designTop,
+      designLeft,
+      linkready,
+    } = props;
+
+    console.log(props);
+  
+    const hsp = (e: number) => (
+      `calc(${visualViewport?.width? `${visualViewport?.width}px` : "100vw"} / 375 * ${e})`
+    );
+
+    console.log(this.id);
+    
+    const el = this;
+    const updateStyle = () => {
+      el.style.top = hsp(designTop);
+      el.style.left = hsp(designLeft);
+      el.style.height = hsp(designHeight);
+      el.style.width = hsp(designWidth);
+      el.style.background = !linkready ? "rgba(255,0,255,0.5)" : "transparent";
+    };
+    el.onclick = !linkready ? () => undefined : () => window.open(linkUrl);
+
+    /** TODO: remove하고 중복제거 가능해야 함 */
+    window.addEventListener("resize", updateStyle);
+  
+    updateStyle();
+  }
+
   editor.Components.addType("image", {
     model: {
       defaults: {
@@ -142,6 +146,10 @@ export default function gjsPromotionBlocks(
       },
       init() {
         this.on("change:attributes:id", this.handleIdChange);
+      },
+      removed() {
+        console.log("Button removed", this.getAttributes());
+        resizeHandlerCleanups.get(this.getAttributes().id)?.();
       },
       handleIdChange() {
         console.log("Attribute id updated: ", this.getAttributes().id);

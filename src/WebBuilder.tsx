@@ -1,13 +1,16 @@
-import React, { useEffect } from "react";
-import { styled } from "styled-components";
-import grapesjs, { Editor } from "grapesjs";
-import "grapesjs/dist/css/grapes.min.css";
-import "grapesjs/dist/grapes.min.js";
-import gjsPresetWebpage from "grapesjs-preset-webpage";
-import gjsBlocksBasic from "grapesjs-blocks-basic";
-import gjsIndexdDB from "grapesjs-indexeddb";
-import gjsExportZip from "grapesjs-plugin-export";
-import gjsPromotionBlocks from "./lib/gjsPromotionBlocks";
+import 'grapesjs/dist/css/grapes.min.css';
+import 'grapesjs/dist/grapes.min.js';
+
+import { useEffect } from 'react';
+
+import grapesjs, { Editor } from 'grapesjs';
+import gjsBlocksBasic from 'grapesjs-blocks-basic';
+import gjsIndexdDB from 'grapesjs-indexeddb';
+import gjsExportZip from 'grapesjs-plugin-export';
+import gjsPresetWebpage from 'grapesjs-preset-webpage';
+import { styled } from 'styled-components';
+
+import gjsPromotionBlocks from './lib/gjsPromotionBlocks';
 
 declare global {
   interface Window {
@@ -42,7 +45,7 @@ function WebBuilder() {
     if (grapesjs.editors[0]) {
       return;
     }
-    grapesjs.init({
+    const editor = grapesjs.init({
       storageManager: { type: "indexeddb" },
       container: GJS.toString(),
       height: "100%",
@@ -58,6 +61,11 @@ function WebBuilder() {
           }),
       ],
     });
+    
+    /** attribute 변경점은 scaling 처리랑 엮여있어 component단에서 처리하므로, style manager 패널은 숨김 */
+    const panelManager = editor.Panels;
+    panelManager.removeButton('views', 'open-sm');
+      
   }, []);
 
   return (

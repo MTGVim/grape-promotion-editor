@@ -1,5 +1,8 @@
+# 모바일 프로모션 페이지 에디터
 https://simple-webpage-builder.web.app/
-
+<kbd>
+<img width="1069" alt="image" src="https://github.com/user-attachments/assets/eabc67cf-35b0-4671-90c2-e421cc8a430f" />
+</kbd>
 # 배경
 모바일 프로모션 페이지를 자주 요구하는 회사에 다녔는데, 세로로 길~쭉한 프로모션 페이지에 앱링크를 심어두는 형태로 프로모션이 많이 진행되었다.
 device viewport width에 비례하여 버튼의 스케일도 맞춰주어야 하는 요건이었는데, 직접 개발하는 것 보다 쉽고 빠른 방법을 찾지 못해 매번 직접 페이지를 개발하고 S3 등에 배포했었다.

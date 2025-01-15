@@ -23,3 +23,7 @@ grapeJS 에 프로모션용 block들을 정의하여, 이러한 형태의 프로
 3. 버튼의 위치를 조정하고, 창의 너비변화에 따라 클릭가능 범위가 잘 유지되는지 확인한다.
 4. 버튼의 id와 Link 값을 채우고, Link ready를 체크한 다음, 버튼을 눌러 제대로 동작하는 지 확인한다.
 5. 버튼이 더 있는경우 버튼 블록을 canvas에 집어넣고 3~4를 반복한다.
+6. zip으로 export하여 배포한다.
+<kbd>
+<img width="804" alt="image" src="https://github.com/user-attachments/assets/a9aa6527-e349-4462-8feb-5341fa9451bc" />
+</kbd>

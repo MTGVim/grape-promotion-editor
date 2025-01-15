@@ -19,7 +19,7 @@ https://simple-webpage-builder.web.app/
 
 이 과정에서 시간이 너무 아깝다는 생각이 들었고, 이런 작업을 효율적으로 처리할 수 있는 전용 도구를 직접 만들어야겠다는 결론에 이르게 되었습니다.
 
-조사를 거쳐 제가 원하는 WYSIWYG 정적 웹 생성기의 기반으로는 [GrapeJS](https://github.com/GrapesJS/grapesjs) 적합하다고 판단했습니다.
+조사를 거쳐 제가 원하는 WYSIWYG 정적 웹 생성기의 기반으로는 [GrapeJS](https://github.com/GrapesJS/grapesjs) 가 가장 적합하다고 판단했습니다.
 
 다만, GrapesJS가 기본적으로 제공하는 블록 기반 에디터 기능은 사용하지 않고, 디바이스 너비에 따라 크기가 조정되고 포지션을 변경할 수 있는 커스텀 이미지와 버튼 블록을 구현해 적용했습니다.
 

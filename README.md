@@ -1,8 +1,13 @@
 # 모바일 프로모션 페이지 에디터
 https://simple-webpage-builder.web.app/
+
 <kbd>
-<img width="1069" alt="image" src="https://github.com/user-attachments/assets/eabc67cf-35b0-4671-90c2-e421cc8a430f" />
+<img width="450" alt="image" src="https://github.com/user-attachments/assets/eabc67cf-35b0-4671-90c2-e421cc8a430f" />
 </kbd>
+<kbd>
+<img width="450" alt="image" src="https://github.com/user-attachments/assets/a9aa6527-e349-4462-8feb-5341fa9451bc" />
+</kbd>
+
 
 # 배경
 모바일 프로모션 페이지를 자주 요구하는 회사에 다녔는데, 세로로 길~쭉한 프로모션 페이지에 앱링크를 심어두는 형태로 프로모션이 많이 진행되었다.
@@ -24,6 +29,3 @@ grapeJS 에 프로모션용 block들을 정의하여, 이러한 형태의 프로
 4. 버튼의 id와 Link 값을 채우고, Link ready를 체크한 다음, 버튼을 눌러 제대로 동작하는 지 확인한다.
 5. 버튼이 더 있는경우 버튼 블록을 canvas에 집어넣고 3~4를 반복한다.
 6. zip으로 export하여 배포한다.
-<kbd>
-<img width="804" alt="image" src="https://github.com/user-attachments/assets/a9aa6527-e349-4462-8feb-5341fa9451bc" />
-</kbd>
